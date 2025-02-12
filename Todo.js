@@ -10,7 +10,7 @@ btn.addEventListener("click", () => {
    
 
    // Create a new input element
-   let newInput = document.createElement("input");
+   let newInput = document.createElement("li");
    newInput.innerText= input.value;
 
    //create a button 
