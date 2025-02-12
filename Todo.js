@@ -7,7 +7,7 @@ container.appendChild(ul);
 
 // Add event listener to the button
 btn.addEventListener("click", () => {
-   
+    if (input.value.trim() === "") return; // Prevent empty inputs
 
    // Create a new input element
    let newInput = document.createElement("li");
@@ -18,7 +18,7 @@ btn.addEventListener("click", () => {
    newBtn.innerHTML = '<i class="fas fa-trash-alt"></i>'; 
    
    ul.appendChild(newInput);
-   container.appendChild(newBtn);
+   newInput.appendChild(newBtn);
 
    // Clear the value of the input field
    input.value = "";
@@ -26,8 +26,7 @@ btn.addEventListener("click", () => {
    
    
    newBtn.addEventListener("click",()=>{
-      container.removeChild(newBtn);
-      container.removeChild(newInput);
+      ul.removeChild(newInput);
    });
 });
 
